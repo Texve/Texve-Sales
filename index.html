@@ -3,54 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Firebase App SDK -->
-  <script>
-    if ('serviceWorker' in navigator) {
-     navigator.serviceWorker.register('/omniGenX/firebase-messaging-sw.js')
-       .then(reg => console.log('Service Worker registered!', reg))
-       .catch(err => console.error('Service Worker registration failed:', err));
-    }
-  </script>  
-<script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
-  import { getMessaging, getToken } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js';
-
-  // Initialize Firebase with your configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyDqaigSMPYeXYu1__T8Mj_y0h3bCQYb4I0",
-        authDomain: "livechat-dc6d0.firebaseapp.com",
-        projectId: "livechat-dc6d0",
-        storageBucket: "livechat-dc6d0.firebasestorage.app",
-        messagingSenderId: "302939024833",
-        appId: "1:302939024833:web:a0e9e00a1c3d93b6509340",
-        measurementId: "G-FX8JBRT2N5"
-      };
-
-  
-  // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const messaging = getMessaging(app);
-
-    // Request permission to show notifications
-    async function requestPermission() {
-      try {
-        const permission = await Notification.requestPermission();
-        if (permission === 'granted') {
-          console.log("Notification permission granted.");
-          // Get the FCM token
-          const token = await getToken(messaging, { vapidKey: "BCwqdeCW7-s0fR_xrLVl-MK5ymSwqfyqF_vy_7GcnlrUr25mTNn8ZVHjNQ77jJdW0lI9_ArPzYMaRe10UwrBY0A" });
-          console.log("FCM Token:", token);
-        } else {
-          console.error("Notification permission denied.");
-        }
-      } catch (error) {
-        console.error("Permission request failed:", error);
-      }
-    }
-
-    // Call the function to request notification permission
-    requestPermission();
-</script>
   <style>
     body {
       margin: 0;
@@ -72,8 +24,8 @@
   </style>
 </head>
 <body>
-  <div id="lightningout"></div>
-  <script src="https://orgfarm-e3c927aa96-dev-ed.develop.lightning.force.com/lightning/lightning.out.js"></script>
+  <div id="lightningout"></div> 
+  <script src="https://texvellc2--omnigenuat.sandbox.lightning.force.com/lightning/lightning.out.js"></script>
   <script>
     $Lightning.use(
       'c:LightningOutDependencyApp', // name of the Lightning Out app
@@ -87,7 +39,7 @@
           }
         );
       },
-      'https://orgfarm-e3c927aa96-dev-ed.develop.my.site.com' // Experience Cloud site endpoint
+      'https://texvellc2--omnigenuat.sandbox.my.site.com/webchat' // Experience Cloud site endpoint
     );
   </script>
 </body>
